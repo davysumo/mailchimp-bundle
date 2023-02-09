@@ -41,7 +41,7 @@ class WebhookCommand extends Command
         // @TODO add params : listId, webhookurl
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln(sprintf('<info>%s</info>', $this->getDescription()));
 
@@ -56,5 +56,7 @@ class WebhookCommand extends Command
         }
 
         $output->writeln('✔ done');
+
+        return Command::SUCCESS;
     }
 }
